@@ -1,0 +1,19 @@
+from __future__ import annotations
+
+from typing import Protocol
+
+from .model import ReservationAggregate, TableAggregate, TimeSlot
+
+
+class ReservationRepository(Protocol):
+
+    def get(self, reservation_id: str) -> ReservationAggregate | None: ...
+    def add(self, reservation: ReservationAggregate) -> None: ...
+    def list_active_for_table(self, table_id: str, slot: TimeSlot) -> list[ReservationAggregate]: ...
+
+
+class TableRepository(Protocol):
+
+    def get(self, table_id: str) -> TableAggregate | None: ...
+    def add(self, table: TableAggregate) -> None: ...
+    def list_by_min_capacity(self, capacity: int) -> list[TableAggregate]: ...

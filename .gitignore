@@ -1,0 +1,24 @@
+# Виртуальное окружение
+.venv/
+venv/
+
+# Кэши Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Инструменты
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Локальные БД (SQLAlchemy-тесты/демо)
+*.db
+*.sqlite3
+
+# IDE
+.idea/
+.vscode/
